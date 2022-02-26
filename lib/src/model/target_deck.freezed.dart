@@ -112,8 +112,8 @@ class __$TargetDeckCopyWithImpl<$Res> extends _$TargetDeckCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TargetDeck with DiagnosticableTreeMixin implements _TargetDeck {
-  _$_TargetDeck(this.suit, {required this.cards});
+class _$_TargetDeck extends _TargetDeck with DiagnosticableTreeMixin {
+  _$_TargetDeck(this.suit, {required this.cards}) : super._();
 
   @override
   final Suit suit;
@@ -155,9 +155,10 @@ class _$_TargetDeck with DiagnosticableTreeMixin implements _TargetDeck {
       __$TargetDeckCopyWithImpl<_TargetDeck>(this, _$identity);
 }
 
-abstract class _TargetDeck implements TargetDeck {
+abstract class _TargetDeck extends TargetDeck {
   factory _TargetDeck(Suit suit, {required List<SolitaireCard> cards}) =
       _$_TargetDeck;
+  _TargetDeck._() : super._();
 
   @override
   Suit get suit;
