@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fluttericon/rpg_awesome_icons.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_template/src/game_starter.dart';
 import 'package:riverpod_template/src/model/game_data.dart';
-import 'package:riverpod_template/src/model/solitaire_card.dart';
 import 'package:riverpod_template/src/model/tableau.dart';
 
 class HomePage extends HookConsumerWidget {
