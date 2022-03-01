@@ -14,16 +14,29 @@ class SolitaireCard with _$SolitaireCard {
     required bool faceUp,
   }) = _SolitaireCard;
 
+  Color get color {
+    switch (suit) {
+      case Suit.diamonds:
+        return Colors.red;
+      case Suit.hearts:
+        return Colors.red;
+      case Suit.spades:
+        return Colors.black;
+      case Suit.clubs:
+        return Colors.black;
+    }
+  }
+
   Widget getIcon({double size = 30.0}) {
     switch (suit) {
       case Suit.hearts:
-        return Icon(RpgAwesome.hearts, size: size, color: Colors.red);
+        return Icon(RpgAwesome.hearts, size: size, color: color);
       case Suit.diamonds:
-        return Icon(RpgAwesome.diamonds, size: size, color: Colors.red);
+        return Icon(RpgAwesome.diamonds, size: size, color: color);
       case Suit.clubs:
-        return Icon(RpgAwesome.clovers, size: size, color: Colors.black);
+        return Icon(RpgAwesome.clovers, size: size, color: color);
       case Suit.spades:
-        return Icon(RpgAwesome.spades, size: size, color: Colors.black);
+        return Icon(RpgAwesome.spades, size: size, color: color);
     }
   }
 
