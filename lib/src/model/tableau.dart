@@ -10,7 +10,7 @@ class Tableau with _$Tableau {
   factory Tableau({
     required List<SolitaireCard> stockCards,
     required List<SolitaireCard> wasteCards,
-    required List<List<SolitaireCard>> mainColumnsCards,
+    required List<List<SolitaireCard>> mainColumns,
     required TargetDeck diamondTarget,
     required TargetDeck heartsTarget,
     required TargetDeck spadesTarget,

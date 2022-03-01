@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'game_data.dart';
+part of 'game_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,8 +15,8 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$GameDataTearOff {
-  const _$GameDataTearOff();
+class _$GameStateTearOff {
+  const _$GameStateTearOff();
 
   _Init init() {
     return const _Init();
@@ -40,10 +40,10 @@ class _$GameDataTearOff {
 }
 
 /// @nodoc
-const $GameData = _$GameDataTearOff();
+const $GameState = _$GameStateTearOff();
 
 /// @nodoc
-mixin _$GameData {
+mixin _$GameState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
@@ -97,18 +97,18 @@ mixin _$GameData {
 }
 
 /// @nodoc
-abstract class $GameDataCopyWith<$Res> {
-  factory $GameDataCopyWith(GameData value, $Res Function(GameData) then) =
-      _$GameDataCopyWithImpl<$Res>;
+abstract class $GameStateCopyWith<$Res> {
+  factory $GameStateCopyWith(GameState value, $Res Function(GameState) then) =
+      _$GameStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GameDataCopyWithImpl<$Res> implements $GameDataCopyWith<$Res> {
-  _$GameDataCopyWithImpl(this._value, this._then);
+class _$GameStateCopyWithImpl<$Res> implements $GameStateCopyWith<$Res> {
+  _$GameStateCopyWithImpl(this._value, this._then);
 
-  final GameData _value;
+  final GameState _value;
   // ignore: unused_field
-  final $Res Function(GameData) _then;
+  final $Res Function(GameState) _then;
 }
 
 /// @nodoc
@@ -118,7 +118,7 @@ abstract class _$InitCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitCopyWithImpl<$Res> extends _$GameDataCopyWithImpl<$Res>
+class __$InitCopyWithImpl<$Res> extends _$GameStateCopyWithImpl<$Res>
     implements _$InitCopyWith<$Res> {
   __$InitCopyWithImpl(_Init _value, $Res Function(_Init) _then)
       : super(_value, (v) => _then(v as _Init));
@@ -134,13 +134,13 @@ class _$_Init with DiagnosticableTreeMixin implements _Init {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'GameData.init()';
+    return 'GameState.init()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'GameData.init'));
+    properties..add(DiagnosticsProperty('type', 'GameState.init'));
   }
 
   @override
@@ -227,7 +227,7 @@ class _$_Init with DiagnosticableTreeMixin implements _Init {
   }
 }
 
-abstract class _Init implements GameData {
+abstract class _Init implements GameState {
   const factory _Init() = _$_Init;
 }
 
@@ -241,7 +241,7 @@ abstract class _$ReadyCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ReadyCopyWithImpl<$Res> extends _$GameDataCopyWithImpl<$Res>
+class __$ReadyCopyWithImpl<$Res> extends _$GameStateCopyWithImpl<$Res>
     implements _$ReadyCopyWith<$Res> {
   __$ReadyCopyWithImpl(_Ready _value, $Res Function(_Ready) _then)
       : super(_value, (v) => _then(v as _Ready));
@@ -279,14 +279,14 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'GameData.ready(tableau: $tableau)';
+    return 'GameState.ready(tableau: $tableau)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'GameData.ready'))
+      ..add(DiagnosticsProperty('type', 'GameState.ready'))
       ..add(DiagnosticsProperty('tableau', tableau));
   }
 
@@ -382,7 +382,7 @@ class _$_Ready with DiagnosticableTreeMixin implements _Ready {
   }
 }
 
-abstract class _Ready implements GameData {
+abstract class _Ready implements GameState {
   const factory _Ready(Tableau tableau) = _$_Ready;
 
   Tableau get tableau;
@@ -397,7 +397,7 @@ abstract class _$LoadingCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LoadingCopyWithImpl<$Res> extends _$GameDataCopyWithImpl<$Res>
+class __$LoadingCopyWithImpl<$Res> extends _$GameStateCopyWithImpl<$Res>
     implements _$LoadingCopyWith<$Res> {
   __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
       : super(_value, (v) => _then(v as _Loading));
@@ -413,13 +413,13 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'GameData.loading()';
+    return 'GameState.loading()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'GameData.loading'));
+    properties..add(DiagnosticsProperty('type', 'GameState.loading'));
   }
 
   @override
@@ -506,7 +506,7 @@ class _$_Loading with DiagnosticableTreeMixin implements _Loading {
   }
 }
 
-abstract class _Loading implements GameData {
+abstract class _Loading implements GameState {
   const factory _Loading() = _$_Loading;
 }
 
@@ -518,7 +518,7 @@ abstract class _$ErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ErrorCopyWithImpl<$Res> extends _$GameDataCopyWithImpl<$Res>
+class __$ErrorCopyWithImpl<$Res> extends _$GameStateCopyWithImpl<$Res>
     implements _$ErrorCopyWith<$Res> {
   __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
       : super(_value, (v) => _then(v as _Error));
@@ -549,14 +549,14 @@ class _$_Error with DiagnosticableTreeMixin implements _Error {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'GameData.error(error: $error)';
+    return 'GameState.error(error: $error)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'GameData.error'))
+      ..add(DiagnosticsProperty('type', 'GameState.error'))
       ..add(DiagnosticsProperty('error', error));
   }
 
@@ -652,7 +652,7 @@ class _$_Error with DiagnosticableTreeMixin implements _Error {
   }
 }
 
-abstract class _Error implements GameData {
+abstract class _Error implements GameState {
   const factory _Error(String error) = _$_Error;
 
   String get error;

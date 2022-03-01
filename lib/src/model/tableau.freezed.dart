@@ -21,7 +21,7 @@ class _$TableauTearOff {
   _Tableau call(
       {required List<SolitaireCard> stockCards,
       required List<SolitaireCard> wasteCards,
-      required List<List<SolitaireCard>> mainColumnsCards,
+      required List<List<SolitaireCard>> mainColumns,
       required TargetDeck diamondTarget,
       required TargetDeck heartsTarget,
       required TargetDeck spadesTarget,
@@ -29,7 +29,7 @@ class _$TableauTearOff {
     return _Tableau(
       stockCards: stockCards,
       wasteCards: wasteCards,
-      mainColumnsCards: mainColumnsCards,
+      mainColumns: mainColumns,
       diamondTarget: diamondTarget,
       heartsTarget: heartsTarget,
       spadesTarget: spadesTarget,
@@ -45,7 +45,7 @@ const $Tableau = _$TableauTearOff();
 mixin _$Tableau {
   List<SolitaireCard> get stockCards => throw _privateConstructorUsedError;
   List<SolitaireCard> get wasteCards => throw _privateConstructorUsedError;
-  List<List<SolitaireCard>> get mainColumnsCards =>
+  List<List<SolitaireCard>> get mainColumns =>
       throw _privateConstructorUsedError;
   TargetDeck get diamondTarget => throw _privateConstructorUsedError;
   TargetDeck get heartsTarget => throw _privateConstructorUsedError;
@@ -63,7 +63,7 @@ abstract class $TableauCopyWith<$Res> {
   $Res call(
       {List<SolitaireCard> stockCards,
       List<SolitaireCard> wasteCards,
-      List<List<SolitaireCard>> mainColumnsCards,
+      List<List<SolitaireCard>> mainColumns,
       TargetDeck diamondTarget,
       TargetDeck heartsTarget,
       TargetDeck spadesTarget,
@@ -87,7 +87,7 @@ class _$TableauCopyWithImpl<$Res> implements $TableauCopyWith<$Res> {
   $Res call({
     Object? stockCards = freezed,
     Object? wasteCards = freezed,
-    Object? mainColumnsCards = freezed,
+    Object? mainColumns = freezed,
     Object? diamondTarget = freezed,
     Object? heartsTarget = freezed,
     Object? spadesTarget = freezed,
@@ -102,9 +102,9 @@ class _$TableauCopyWithImpl<$Res> implements $TableauCopyWith<$Res> {
           ? _value.wasteCards
           : wasteCards // ignore: cast_nullable_to_non_nullable
               as List<SolitaireCard>,
-      mainColumnsCards: mainColumnsCards == freezed
-          ? _value.mainColumnsCards
-          : mainColumnsCards // ignore: cast_nullable_to_non_nullable
+      mainColumns: mainColumns == freezed
+          ? _value.mainColumns
+          : mainColumns // ignore: cast_nullable_to_non_nullable
               as List<List<SolitaireCard>>,
       diamondTarget: diamondTarget == freezed
           ? _value.diamondTarget
@@ -162,7 +162,7 @@ abstract class _$TableauCopyWith<$Res> implements $TableauCopyWith<$Res> {
   $Res call(
       {List<SolitaireCard> stockCards,
       List<SolitaireCard> wasteCards,
-      List<List<SolitaireCard>> mainColumnsCards,
+      List<List<SolitaireCard>> mainColumns,
       TargetDeck diamondTarget,
       TargetDeck heartsTarget,
       TargetDeck spadesTarget,
@@ -191,7 +191,7 @@ class __$TableauCopyWithImpl<$Res> extends _$TableauCopyWithImpl<$Res>
   $Res call({
     Object? stockCards = freezed,
     Object? wasteCards = freezed,
-    Object? mainColumnsCards = freezed,
+    Object? mainColumns = freezed,
     Object? diamondTarget = freezed,
     Object? heartsTarget = freezed,
     Object? spadesTarget = freezed,
@@ -206,9 +206,9 @@ class __$TableauCopyWithImpl<$Res> extends _$TableauCopyWithImpl<$Res>
           ? _value.wasteCards
           : wasteCards // ignore: cast_nullable_to_non_nullable
               as List<SolitaireCard>,
-      mainColumnsCards: mainColumnsCards == freezed
-          ? _value.mainColumnsCards
-          : mainColumnsCards // ignore: cast_nullable_to_non_nullable
+      mainColumns: mainColumns == freezed
+          ? _value.mainColumns
+          : mainColumns // ignore: cast_nullable_to_non_nullable
               as List<List<SolitaireCard>>,
       diamondTarget: diamondTarget == freezed
           ? _value.diamondTarget
@@ -236,7 +236,7 @@ class _$_Tableau with DiagnosticableTreeMixin implements _Tableau {
   _$_Tableau(
       {required this.stockCards,
       required this.wasteCards,
-      required this.mainColumnsCards,
+      required this.mainColumns,
       required this.diamondTarget,
       required this.heartsTarget,
       required this.spadesTarget,
@@ -247,7 +247,7 @@ class _$_Tableau with DiagnosticableTreeMixin implements _Tableau {
   @override
   final List<SolitaireCard> wasteCards;
   @override
-  final List<List<SolitaireCard>> mainColumnsCards;
+  final List<List<SolitaireCard>> mainColumns;
   @override
   final TargetDeck diamondTarget;
   @override
@@ -259,7 +259,7 @@ class _$_Tableau with DiagnosticableTreeMixin implements _Tableau {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Tableau(stockCards: $stockCards, wasteCards: $wasteCards, mainColumnsCards: $mainColumnsCards, diamondTarget: $diamondTarget, heartsTarget: $heartsTarget, spadesTarget: $spadesTarget, clubsTarget: $clubsTarget)';
+    return 'Tableau(stockCards: $stockCards, wasteCards: $wasteCards, mainColumns: $mainColumns, diamondTarget: $diamondTarget, heartsTarget: $heartsTarget, spadesTarget: $spadesTarget, clubsTarget: $clubsTarget)';
   }
 
   @override
@@ -269,7 +269,7 @@ class _$_Tableau with DiagnosticableTreeMixin implements _Tableau {
       ..add(DiagnosticsProperty('type', 'Tableau'))
       ..add(DiagnosticsProperty('stockCards', stockCards))
       ..add(DiagnosticsProperty('wasteCards', wasteCards))
-      ..add(DiagnosticsProperty('mainColumnsCards', mainColumnsCards))
+      ..add(DiagnosticsProperty('mainColumns', mainColumns))
       ..add(DiagnosticsProperty('diamondTarget', diamondTarget))
       ..add(DiagnosticsProperty('heartsTarget', heartsTarget))
       ..add(DiagnosticsProperty('spadesTarget', spadesTarget))
@@ -286,7 +286,7 @@ class _$_Tableau with DiagnosticableTreeMixin implements _Tableau {
             const DeepCollectionEquality()
                 .equals(other.wasteCards, wasteCards) &&
             const DeepCollectionEquality()
-                .equals(other.mainColumnsCards, mainColumnsCards) &&
+                .equals(other.mainColumns, mainColumns) &&
             const DeepCollectionEquality()
                 .equals(other.diamondTarget, diamondTarget) &&
             const DeepCollectionEquality()
@@ -302,7 +302,7 @@ class _$_Tableau with DiagnosticableTreeMixin implements _Tableau {
       runtimeType,
       const DeepCollectionEquality().hash(stockCards),
       const DeepCollectionEquality().hash(wasteCards),
-      const DeepCollectionEquality().hash(mainColumnsCards),
+      const DeepCollectionEquality().hash(mainColumns),
       const DeepCollectionEquality().hash(diamondTarget),
       const DeepCollectionEquality().hash(heartsTarget),
       const DeepCollectionEquality().hash(spadesTarget),
@@ -318,7 +318,7 @@ abstract class _Tableau implements Tableau {
   factory _Tableau(
       {required List<SolitaireCard> stockCards,
       required List<SolitaireCard> wasteCards,
-      required List<List<SolitaireCard>> mainColumnsCards,
+      required List<List<SolitaireCard>> mainColumns,
       required TargetDeck diamondTarget,
       required TargetDeck heartsTarget,
       required TargetDeck spadesTarget,
@@ -329,7 +329,7 @@ abstract class _Tableau implements Tableau {
   @override
   List<SolitaireCard> get wasteCards;
   @override
-  List<List<SolitaireCard>> get mainColumnsCards;
+  List<List<SolitaireCard>> get mainColumns;
   @override
   TargetDeck get diamondTarget;
   @override
