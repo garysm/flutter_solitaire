@@ -18,16 +18,16 @@ class TargetDeck with _$TargetDeck {
     switch (suit) {
       case Suit.hearts:
         return Icon(RpgAwesome.hearts,
-            size: size, color: Colors.green.shade800);
+            size: size, color: Colors.green.shade700);
       case Suit.diamonds:
         return Icon(RpgAwesome.diamonds,
-            size: size, color: Colors.green.shade800);
+            size: size, color: Colors.green.shade700);
       case Suit.clubs:
         return Icon(RpgAwesome.clovers,
-            size: size, color: Colors.green.shade800);
+            size: size, color: Colors.green.shade700);
       case Suit.spades:
         return Icon(RpgAwesome.spades,
-            size: size, color: Colors.green.shade800);
+            size: size, color: Colors.green.shade700);
     }
   }
 }
