@@ -19,11 +19,15 @@ class _$SolitaireCardTearOff {
   const _$SolitaireCardTearOff();
 
   _SolitaireCard call(
-      {required Suit suit, required Rank rank, required bool faceUp}) {
+      {required Suit suit,
+      required Rank rank,
+      required bool faceUp,
+      bool? inStock}) {
     return _SolitaireCard(
       suit: suit,
       rank: rank,
       faceUp: faceUp,
+      inStock: inStock,
     );
   }
 }
@@ -36,6 +40,7 @@ mixin _$SolitaireCard {
   Suit get suit => throw _privateConstructorUsedError;
   Rank get rank => throw _privateConstructorUsedError;
   bool get faceUp => throw _privateConstructorUsedError;
+  bool? get inStock => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SolitaireCardCopyWith<SolitaireCard> get copyWith =>
@@ -47,7 +52,7 @@ abstract class $SolitaireCardCopyWith<$Res> {
   factory $SolitaireCardCopyWith(
           SolitaireCard value, $Res Function(SolitaireCard) then) =
       _$SolitaireCardCopyWithImpl<$Res>;
-  $Res call({Suit suit, Rank rank, bool faceUp});
+  $Res call({Suit suit, Rank rank, bool faceUp, bool? inStock});
 }
 
 /// @nodoc
@@ -64,6 +69,7 @@ class _$SolitaireCardCopyWithImpl<$Res>
     Object? suit = freezed,
     Object? rank = freezed,
     Object? faceUp = freezed,
+    Object? inStock = freezed,
   }) {
     return _then(_value.copyWith(
       suit: suit == freezed
@@ -78,6 +84,10 @@ class _$SolitaireCardCopyWithImpl<$Res>
           ? _value.faceUp
           : faceUp // ignore: cast_nullable_to_non_nullable
               as bool,
+      inStock: inStock == freezed
+          ? _value.inStock
+          : inStock // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -89,7 +99,7 @@ abstract class _$SolitaireCardCopyWith<$Res>
           _SolitaireCard value, $Res Function(_SolitaireCard) then) =
       __$SolitaireCardCopyWithImpl<$Res>;
   @override
-  $Res call({Suit suit, Rank rank, bool faceUp});
+  $Res call({Suit suit, Rank rank, bool faceUp, bool? inStock});
 }
 
 /// @nodoc
@@ -108,6 +118,7 @@ class __$SolitaireCardCopyWithImpl<$Res>
     Object? suit = freezed,
     Object? rank = freezed,
     Object? faceUp = freezed,
+    Object? inStock = freezed,
   }) {
     return _then(_SolitaireCard(
       suit: suit == freezed
@@ -122,6 +133,10 @@ class __$SolitaireCardCopyWithImpl<$Res>
           ? _value.faceUp
           : faceUp // ignore: cast_nullable_to_non_nullable
               as bool,
+      inStock: inStock == freezed
+          ? _value.inStock
+          : inStock // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -130,7 +145,10 @@ class __$SolitaireCardCopyWithImpl<$Res>
 
 class _$_SolitaireCard extends _SolitaireCard with DiagnosticableTreeMixin {
   _$_SolitaireCard(
-      {required this.suit, required this.rank, required this.faceUp})
+      {required this.suit,
+      required this.rank,
+      required this.faceUp,
+      this.inStock})
       : super._();
 
   @override
@@ -139,10 +157,12 @@ class _$_SolitaireCard extends _SolitaireCard with DiagnosticableTreeMixin {
   final Rank rank;
   @override
   final bool faceUp;
+  @override
+  final bool? inStock;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SolitaireCard(suit: $suit, rank: $rank, faceUp: $faceUp)';
+    return 'SolitaireCard(suit: $suit, rank: $rank, faceUp: $faceUp, inStock: $inStock)';
   }
 
   @override
@@ -152,7 +172,8 @@ class _$_SolitaireCard extends _SolitaireCard with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('type', 'SolitaireCard'))
       ..add(DiagnosticsProperty('suit', suit))
       ..add(DiagnosticsProperty('rank', rank))
-      ..add(DiagnosticsProperty('faceUp', faceUp));
+      ..add(DiagnosticsProperty('faceUp', faceUp))
+      ..add(DiagnosticsProperty('inStock', inStock));
   }
 
   @override
@@ -162,7 +183,8 @@ class _$_SolitaireCard extends _SolitaireCard with DiagnosticableTreeMixin {
             other is _SolitaireCard &&
             const DeepCollectionEquality().equals(other.suit, suit) &&
             const DeepCollectionEquality().equals(other.rank, rank) &&
-            const DeepCollectionEquality().equals(other.faceUp, faceUp));
+            const DeepCollectionEquality().equals(other.faceUp, faceUp) &&
+            const DeepCollectionEquality().equals(other.inStock, inStock));
   }
 
   @override
@@ -170,7 +192,8 @@ class _$_SolitaireCard extends _SolitaireCard with DiagnosticableTreeMixin {
       runtimeType,
       const DeepCollectionEquality().hash(suit),
       const DeepCollectionEquality().hash(rank),
-      const DeepCollectionEquality().hash(faceUp));
+      const DeepCollectionEquality().hash(faceUp),
+      const DeepCollectionEquality().hash(inStock));
 
   @JsonKey(ignore: true)
   @override
@@ -182,7 +205,8 @@ abstract class _SolitaireCard extends SolitaireCard {
   factory _SolitaireCard(
       {required Suit suit,
       required Rank rank,
-      required bool faceUp}) = _$_SolitaireCard;
+      required bool faceUp,
+      bool? inStock}) = _$_SolitaireCard;
   _SolitaireCard._() : super._();
 
   @override
@@ -191,6 +215,8 @@ abstract class _SolitaireCard extends SolitaireCard {
   Rank get rank;
   @override
   bool get faceUp;
+  @override
+  bool? get inStock;
   @override
   @JsonKey(ignore: true)
   _$SolitaireCardCopyWith<_SolitaireCard> get copyWith =>

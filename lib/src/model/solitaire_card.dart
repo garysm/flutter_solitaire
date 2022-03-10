@@ -12,6 +12,7 @@ class SolitaireCard with _$SolitaireCard {
     required Suit suit,
     required Rank rank,
     required bool faceUp,
+    bool? inStock,
   }) = _SolitaireCard;
 
   Color get color {
