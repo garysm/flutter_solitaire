@@ -74,8 +74,6 @@ class TableauModel extends StateNotifier<Tableau> {
   }
 
   void _addRemainder() {
-    final firstCard = _tempDeck.first;
-    _tempDeck.remove(firstCard);
     state = state.copyWith(
       stockCards: _tempDeck
           .map(
@@ -85,12 +83,6 @@ class TableauModel extends StateNotifier<Tableau> {
             ),
           )
           .toList(),
-      wasteCards: [
-        firstCard.copyWith(
-          faceUp: true,
-          inStock: true,
-        )
-      ],
     );
   }
 
@@ -192,12 +184,23 @@ class TableauModel extends StateNotifier<Tableau> {
   }
 
   void drawNextFromStock() {
-    // Move the card to the waste pile, then remove it from the stock pile
-    // The last waste card is not removed every time, as it will be reset when the stock is empty
-    final nextStockCard = state.stockCards.first;
-    state = state.copyWith(
-      wasteCards: state.wasteCards..add(nextStockCard),
-      stockCards: state.stockCards..remove(nextStockCard),
-    );
+    if (state.stockCards.isNotEmpty) {
+      // Move the card to the waste pile, then remove it from the stock pile
+      // The last waste card is not removed every time, as it will be reset when the stock is empty
+      final nextStockCard = state.stockCards.first;
+      state = state.copyWith(
+        wasteCards: state.wasteCards..add(nextStockCard),
+        stockCards: state.stockCards..remove(nextStockCard),
+      );
+    }
+  }
+
+  void resetStock() {
+    if (state.wasteCards.isNotEmpty) {
+      state = state.copyWith(
+        stockCards: state.wasteCards,
+        wasteCards: [],
+      );
+    }
   }
 }

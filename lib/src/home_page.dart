@@ -125,7 +125,15 @@ class HomePage extends ConsumerWidget {
                                           hasStripe: false,
                                         ),
                                       )
-                                    : SizedBox.fromSize(size: cardSize),
+                                    : SizedBox.fromSize(
+                                        size: cardSize,
+                                        child: GestureDetector(
+                                          onTap: () => ref
+                                              .read(gameStateModelProvider
+                                                  .notifier)
+                                              .resetStock(),
+                                        ),
+                                      ),
                               ],
                             ),
                           ],

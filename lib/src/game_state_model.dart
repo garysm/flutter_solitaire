@@ -53,8 +53,10 @@ class GameStateModel extends StateNotifier<GameState> {
 
   void drawNextFromStock() {
     // Ensure that there is a card to draw
-    if (_tableau.stockCards.isNotEmpty) {
-      _read(_tableauProvider.notifier).drawNextFromStock();
-    }
+    _read(_tableauProvider.notifier).drawNextFromStock();
+  }
+
+  void resetStock() {
+    _read(_tableauProvider.notifier).resetStock();
   }
 }
