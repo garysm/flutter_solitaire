@@ -146,10 +146,16 @@ class HomePage extends ConsumerWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             for (final column in tableau.mainColumns)
-                              ColumnCardStack(
-                                tableau.mainColumns.indexOf(column),
-                                cards: column,
-                                cardSize: cardSize,
+
+                              /// The CardStack is wrapped in a SizedBox to extend the
+                              /// target area in which to drag the cards to the bottom of the screen.
+                              SizedBox(
+                                height: constraints.maxHeight,
+                                child: ColumnCardStack(
+                                  tableau.mainColumns.indexOf(column),
+                                  cards: column,
+                                  cardSize: cardSize,
+                                ),
                               ),
                           ],
                         ),
