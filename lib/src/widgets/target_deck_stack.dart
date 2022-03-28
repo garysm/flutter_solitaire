@@ -33,18 +33,15 @@ class TargetDeckStack extends ConsumerWidget {
         return incomingCard.suit == suit;
       },
       onAcceptWithDetails: (DragTargetDetails<Map<String, dynamic>> details) {
-        final source = details.data['source'];
-        if (source == 'column') {
-          final indexFrom = details.data['columnIndex'];
+        final indexFrom = details.data['columnIndex'];
 
-          final List<SolitaireCard> cards = details.data['cards'];
-          final SolitaireCard card = cards.first;
-          ref.read(gameStateModelProvider.notifier).addToTargetDeck(
-                columnIndexFrom: indexFrom,
-                targetSuit: suit,
-                cardToAdd: card,
-              );
-        }
+        final List<SolitaireCard> cards = details.data['cards'];
+        final SolitaireCard card = cards.first;
+        ref.read(gameStateModelProvider.notifier).addToTargetDeck(
+              columnIndexFrom: indexFrom,
+              targetSuit: suit,
+              cardToAdd: card,
+            );
       },
       builder: (context, candidateData, rejectedData) {
         return FaceupPlayingCard(cards.last);
