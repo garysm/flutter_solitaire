@@ -40,8 +40,12 @@ class ColumnCardStack extends ConsumerWidget {
         if (incomingCards.isEmpty) {
           return false;
         }
-        if (cards.isEmpty && incomingCards.first.rank == Rank.king) {
-          return true;
+        if (cards.isEmpty) {
+          if (incomingCards.first.rank == Rank.king) {
+            return true;
+          } else {
+            return false;
+          }
         }
         final firstCardIncoming = incomingCards.first;
         final lastCard = cards.last;
