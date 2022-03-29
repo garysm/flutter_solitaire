@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttericon/rpg_awesome_icons.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:riverpod_template/src/game_state_model.dart';
+import 'package:riverpod_template/src/logic/game_state_model.dart';
 import 'package:riverpod_template/src/model/solitaire_card.dart';
 
 class EmptyTargetDeck extends ConsumerWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:riverpod_template/src/game_state_model.dart';
+import 'package:riverpod_template/src/logic/game_state_model.dart';
 import 'package:riverpod_template/src/model/solitaire_card.dart';
 import 'package:riverpod_template/src/widgets/facedown_playing_card.dart';
 import 'package:riverpod_template/src/widgets/faceup_playing_card.dart';

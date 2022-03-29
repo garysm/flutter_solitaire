@@ -1,8 +1,8 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_template/src/logic/tableau_model.dart';
 import 'package:riverpod_template/src/model/game_state.dart';
 import 'package:riverpod_template/src/model/solitaire_card.dart';
 import 'package:riverpod_template/src/model/tableau.dart';
-import 'package:riverpod_template/src/tableau_model.dart';
 
 final _tableauProvider =
     StateNotifierProvider<TableauModel, Tableau>((ref) => TableauModel());
@@ -19,8 +19,31 @@ class GameStateModel extends StateNotifier<GameState> {
   final Reader _read;
   final Tableau _tableau;
 
-  String get totalCardsCount {
+  int get totalCardsCount {
+    return _tableau.mainColumns
+            .map((column) => column.length)
+            .reduce((a, b) => a + b) +
+        _tableau.stockCards.length +
+        _tableau.wasteCards.length +
+        _tableau.diamondTarget.cards.length +
+        _tableau.heartsTarget.cards.length +
+        _tableau.spadesTarget.cards.length +
+        _tableau.clubsTarget.cards.length;
+  }
+
+  int get targetCardsCount {
+    return _tableau.diamondTarget.cards.length +
+        _tableau.heartsTarget.cards.length +
+        _tableau.spadesTarget.cards.length +
+        _tableau.clubsTarget.cards.length;
+  }
+
+  String get totalCardsCountString {
     return '${_tableau.mainColumns.map((c) => c.length).reduce((a, b) => a + b) + _tableau.stockCards.length + _tableau.wasteCards.length + _tableau.diamondTarget.cards.length + _tableau.heartsTarget.cards.length + _tableau.spadesTarget.cards.length + _tableau.clubsTarget.cards.length}';
+  }
+
+  void restart() {
+    _init();
   }
 
   _init() {

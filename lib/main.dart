@@ -7,6 +7,6 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(
-    const ProviderScope(child: MyApp()),
+    const ProviderScope(child: SolitaireApp()),
   );
 }
